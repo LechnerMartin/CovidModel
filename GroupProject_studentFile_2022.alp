@@ -816,7 +816,10 @@ this.applyNetwork();//connect agents according to network settings
 //Parameter can be: "NoImmunization", "Immunized", "Boostered", "NoImmunizationInfectious", "ImmunizedInfectious", "BoosteredInfectious"
 //example code for accessing parameter for every person
 
-
+List<String> infectiousStates = new ArrayList<>(Arrays.asList(
+	"NoImmunizationInfectious", "ImmunizedInfectious", "BoosteredInfectious"));
+List<String> noninfectiousStates = new ArrayList<>(Arrays.asList(
+	"NoImmunization", "Immunized", "Boostered"));
 List<String> statesFor2G = new ArrayList<>(Arrays.asList(
 	"Immunized", "Boostered", "ImmunizedInfectious", "BoosteredInfectious"));
 
@@ -828,19 +831,54 @@ final int PM_3G = 4;
 final int PM_PCR_ALL = 5;
 final int PM_ANTIGEN_ALL = 6;
 
+double pcrTestRate = 0.25;
+double pcrTruePos = 0.1; // 1-% false neg
+double pcrFalsePos = 0.5; //
+
+double agTruePos = 0.1; // 1-% false neg
+double agFalsePos = 0.5; //
+
+System.out.println(this.people.size());
+
 // has to be done backwards because removing people from lists shifts next down and index up - so next can be skipped!
 for(int i = this.people.size()-1; i > -1 ;i--){
 	Person person = this.people.get(i);
 	String stateOfPerson = person.statePreSimulation;
+	boolean deletePerson = true;
+	
+	if (preventionMeasure == PM_NONE){
+		deletePerson = false;
+	}
 		
-	if (preventionMeasure == PM_2G && !statesFor2G.contains(stateOfPerson)){
-		System.out.println(stateOfPerson);
-		person.deleteSelf();
+	if (preventionMeasure == PM_2G && statesFor2G.contains(stateOfPerson)){
+		deletePerson = false;
 	}
 	
+	if (preventionMeasure == PM_2G_AND_PCR){
+		if (statesFor2G.contains(stateOfPerson) && isTestNegativ(stateOfPerson, 1)) deletePerson = false;
+	}
+
+	if (preventionMeasure == PM_2G_OR_PCR){
+		if (statesFor2G.contains(stateOfPerson) || isTestNegativ(stateOfPerson, 1)) deletePerson = false;
+	}
+	
+	if (preventionMeasure == PM_3G){
+		if (statesFor2G.contains(stateOfPerson) || isTestNegativ(stateOfPerson, pcrTestRate)) deletePerson = false;
+	}
+	
+	if (preventionMeasure == PM_PCR_ALL){
+		if (isTestNegativ(stateOfPerson, 1)) deletePerson = false;
+	}
+	
+	if (preventionMeasure == PM_ANTIGEN_ALL){
+		if (isTestNegativ(stateOfPerson, 0)) deletePerson = false;
+	}
+	
+	
+	if (deletePerson) person.deleteSelf();
 }
 
-//System.out.println(statesFor2G);
+System.out.println(this.people.size());
 //System.out.println(preventionMeasure);
 
 
@@ -848,6 +886,53 @@ for(int i = this.people.size()-1; i > -1 ;i--){
 
 //TODO
 //TO BE IMPLEMENTED
+
+]]></Body>
+				</Function>
+				<Function AccessType="private" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1668812388343</Id>
+					<Name><![CDATA[isTestNegativ]]></Name>
+					<X>-610</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[stateOfPerson]]></Name>
+						<Type><![CDATA[String]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[pcrRate]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Body><![CDATA[List<String> infectiousStates = new ArrayList<>(Arrays.asList(
+	"NoImmunizationInfectious", "ImmunizedInfectious", "BoosteredInfectious"));
+List<String> noninfectiousStates = new ArrayList<>(Arrays.asList(
+	"NoImmunization", "Immunized", "Boostered"));
+
+
+double pcrTestRate = 0.25;
+double pcrTruePos = 0.9; // 1-% false neg
+double pcrFalsePos = 0.1; 
+double agTruePos = 0.6; // 1-% false neg
+double agFalsePos = 0.2; 
+
+double rndTest = Math.random();
+double rndPcr = Math.random();
+boolean isTestPositiv = false;
+
+if (rndPcr < pcrTestRate) { // PCR test
+	if(noninfectiousStates.contains(stateOfPerson) && rndTest < pcrFalsePos) isTestPositiv = true;
+	if(infectiousStates.contains(stateOfPerson) && rndTest < pcrTruePos) isTestPositiv = true;
+}
+else { // Antigen test
+	if(noninfectiousStates.contains(stateOfPerson) && rndTest < agFalsePos) isTestPositiv = true;
+	if(infectiousStates.contains(stateOfPerson) && rndTest < agTruePos) isTestPositiv = true;						
+}
+	
+return !isTestPositiv;
 
 ]]></Body>
 				</Function>
