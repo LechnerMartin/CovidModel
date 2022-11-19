@@ -816,12 +816,6 @@ this.applyNetwork();//connect agents according to network settings
 //Parameter can be: "NoImmunization", "Immunized", "Boostered", "NoImmunizationInfectious", "ImmunizedInfectious", "BoosteredInfectious"
 //example code for accessing parameter for every person
 
-List<String> infectiousStates = new ArrayList<>(Arrays.asList(
-	"NoImmunizationInfectious", "ImmunizedInfectious", "BoosteredInfectious"));
-List<String> noninfectiousStates = new ArrayList<>(Arrays.asList(
-	"NoImmunization", "Immunized", "Boostered"));
-List<String> statesFor2G = new ArrayList<>(Arrays.asList(
-	"Immunized", "Boostered", "ImmunizedInfectious", "BoosteredInfectious"));
 
 final int PM_NONE = 0;
 final int PM_2G = 1;
@@ -831,61 +825,63 @@ final int PM_3G = 4;
 final int PM_PCR_ALL = 5;
 final int PM_ANTIGEN_ALL = 6;
 
+final int MASK_NONE = 0;
+final int MASK_MNS = 1;
+final int MASK_FFP2 = 2;
+
+double maskMnsReduction = 0.15;
+double maskFFP2Reduction = 0.25;
 double pcrTestRate = 0.25;
-double pcrTruePos = 0.1; // 1-% false neg
-double pcrFalsePos = 0.5; //
 
-double agTruePos = 0.1; // 1-% false neg
-double agFalsePos = 0.5; //
+List<String> statesFor2G = new ArrayList<>(Arrays.asList(
+	"Immunized", "Boostered", "ImmunizedInfectious", "BoosteredInfectious"));
 
-System.out.println(this.people.size());
+
+System.out.println("Before filter: " + this.people.size());
 
 // has to be done backwards because removing people from lists shifts next down and index up - so next can be skipped!
 for(int i = this.people.size()-1; i > -1 ;i--){
 	Person person = this.people.get(i);
-	String stateOfPerson = person.statePreSimulation;
-	boolean deletePerson = true;
 	
-	if (preventionMeasure == PM_NONE){
-		deletePerson = false;
+	switch(mask) {
+		case MASK_MNS: person.factorToBeInfected *= (1-maskMnsReduction);
+			break;
+		case MASK_FFP2: person.factorToBeInfected *= (1-maskFFP2Reduction);
+			break;
+		default:	
 	}
 		
-	if (preventionMeasure == PM_2G && statesFor2G.contains(stateOfPerson)){
-		deletePerson = false;
+	String stateOfPerson = person.statePreSimulation;
+	boolean deletePerson = true;
+	switch(preventionMeasure) {
+		case PM_2G: 
+			if (statesFor2G.contains(stateOfPerson)) deletePerson = false;
+			break;
+		case PM_2G_AND_PCR: 
+			if (statesFor2G.contains(stateOfPerson) && isTestNegativ(stateOfPerson, 1)) deletePerson = false;
+			break;
+		case PM_2G_OR_PCR:
+			if (statesFor2G.contains(stateOfPerson) || isTestNegativ(stateOfPerson, 1)) deletePerson = false;
+			break;
+		case PM_3G:
+			if (statesFor2G.contains(stateOfPerson) || isTestNegativ(stateOfPerson, pcrTestRate)) deletePerson = false;
+			break;
+		case PM_PCR_ALL:
+			if (isTestNegativ(stateOfPerson, 1)) deletePerson = false;		
+			break;
+		case PM_ANTIGEN_ALL:
+			if (isTestNegativ(stateOfPerson, 0)) deletePerson = false;
+			break;	
+		case PM_NONE:
+		default: 
+			deletePerson = false;		
 	}
-	
-	if (preventionMeasure == PM_2G_AND_PCR){
-		if (statesFor2G.contains(stateOfPerson) && isTestNegativ(stateOfPerson, 1)) deletePerson = false;
-	}
-
-	if (preventionMeasure == PM_2G_OR_PCR){
-		if (statesFor2G.contains(stateOfPerson) || isTestNegativ(stateOfPerson, 1)) deletePerson = false;
-	}
-	
-	if (preventionMeasure == PM_3G){
-		if (statesFor2G.contains(stateOfPerson) || isTestNegativ(stateOfPerson, pcrTestRate)) deletePerson = false;
-	}
-	
-	if (preventionMeasure == PM_PCR_ALL){
-		if (isTestNegativ(stateOfPerson, 1)) deletePerson = false;
-	}
-	
-	if (preventionMeasure == PM_ANTIGEN_ALL){
-		if (isTestNegativ(stateOfPerson, 0)) deletePerson = false;
-	}
-	
-	
 	if (deletePerson) person.deleteSelf();
 }
 
-System.out.println(this.people.size());
-//System.out.println(preventionMeasure);
+System.out.println("After filter: " + this.people.size());
+System.out.println("Mask: " + this.mask);
 
-
-
-
-//TODO
-//TO BE IMPLEMENTED
 
 ]]></Body>
 				</Function>
@@ -904,23 +900,24 @@ System.out.println(this.people.size());
 						<Type><![CDATA[String]]></Type>
 					</Parameter>
 					<Parameter>
-						<Name><![CDATA[pcrRate]]></Name>
+						<Name><![CDATA[pcrTestRate]]></Name>
 						<Type><![CDATA[double]]></Type>
 					</Parameter>
 					<Body><![CDATA[List<String> infectiousStates = new ArrayList<>(Arrays.asList(
 	"NoImmunizationInfectious", "ImmunizedInfectious", "BoosteredInfectious"));
 List<String> noninfectiousStates = new ArrayList<>(Arrays.asList(
 	"NoImmunization", "Immunized", "Boostered"));
+	
+// have disease + test pos: sensitivity = TruePos/(TruePos + FN)
+// no disease + neg test: specifity = Tn/(Fp +Tn)
 
-
-double pcrTestRate = 0.25;
 double pcrTruePos = 0.9; // 1-% false neg
 double pcrFalsePos = 0.1; 
 double agTruePos = 0.6; // 1-% false neg
-double agFalsePos = 0.2; 
+double agFalsePos = 0.1; 
 
-double rndTest = Math.random();
 double rndPcr = Math.random();
+double rndTest = Math.random();
 boolean isTestPositiv = false;
 
 if (rndPcr < pcrTestRate) { // PCR test
