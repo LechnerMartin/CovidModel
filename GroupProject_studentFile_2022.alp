@@ -626,6 +626,181 @@ outputFile.setFileName(this.fileName);
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880171184</Id>
+					<Name><![CDATA[pcrTruePos]]></Name>
+					<X>-260</X><Y>690</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.9]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880171182</Id>
+							<Label><![CDATA[pcrTruePos]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880314352</Id>
+					<Name><![CDATA[pcrFalsePos]]></Name>
+					<X>-260</X><Y>720</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.1]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880314350</Id>
+							<Label><![CDATA[pcrFalsePos]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880320616</Id>
+					<Name><![CDATA[agTruePos]]></Name>
+					<X>-260</X><Y>750</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.6]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880320614</Id>
+							<Label><![CDATA[agTruePos]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880328398</Id>
+					<Name><![CDATA[agFalsePos]]></Name>
+					<X>-260</X><Y>780</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.3]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880328396</Id>
+							<Label><![CDATA[agFalsePos]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880338913</Id>
+					<Name><![CDATA[pcrTestProportion]]></Name>
+					<X>-260</X><Y>660</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.26]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880338911</Id>
+							<Label><![CDATA[pcrTestProportion]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880364851</Id>
+					<Name><![CDATA[mnsRiskReduction]]></Name>
+					<X>-260</X><Y>840</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.39]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880364849</Id>
+							<Label><![CDATA[pcrTruePos]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1668880631786</Id>
+					<Name><![CDATA[ffp2RiskReduction]]></Name>
+					<X>-260</X><Y>870</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[0.68]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1668880631784</Id>
+							<Label><![CDATA[pcrTruePos]]></Label>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
 			</Variables>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -829,15 +1004,15 @@ final int MASK_NONE = 0;
 final int MASK_MNS = 1;
 final int MASK_FFP2 = 2;
 
-double maskMnsReduction = 0.15;
-double maskFFP2Reduction = 0.25;
-double pcrTestRate = 0.25;
+double maskMnsReduction = this.mnsRiskReduction;
+double maskFFP2Reduction = this.ffp2RiskReduction ;
+double pcrTestRate = this.pcrTestProportion;
 
 List<String> statesFor2G = new ArrayList<>(Arrays.asList(
 	"Immunized", "Boostered", "ImmunizedInfectious", "BoosteredInfectious"));
 
 
-System.out.println("Before filter: " + this.people.size());
+System.out.println("People: " + this.people.size() + ", Measure: " + this.preventionMeasure + ", Masks: " + this.mask);
 
 // has to be done backwards because removing people from lists shifts next down and index up - so next can be skipped!
 for(int i = this.people.size()-1; i > -1 ;i--){
@@ -880,8 +1055,6 @@ for(int i = this.people.size()-1; i > -1 ;i--){
 }
 
 System.out.println("After filter: " + this.people.size());
-System.out.println("Mask: " + this.mask);
-
 
 ]]></Body>
 				</Function>
@@ -911,10 +1084,10 @@ List<String> noninfectiousStates = new ArrayList<>(Arrays.asList(
 // have disease + test pos: sensitivity = TruePos/(TruePos + FN)
 // no disease + neg test: specifity = Tn/(Fp +Tn)
 
-double pcrTruePos = 0.9; // 1-% false neg
-double pcrFalsePos = 0.1; 
-double agTruePos = 0.6; // 1-% false neg
-double agFalsePos = 0.1; 
+double pcrTruePos = this.pcrTruePos; 
+double pcrFalsePos = this.pcrFalsePos; 
+double agTruePos = this.agTruePos; 
+double agFalsePos = this.agFalsePos; 
 
 double rndPcr = Math.random();
 double rndTest = Math.random();
@@ -1497,7 +1670,7 @@ per 100.000 inh.]]></Text>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1637758162944</Id>
 					<Name><![CDATA[slider]]></Name>
-					<X>780</X><Y>70</Y>
+					<X>780</X><Y>50</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1655,7 +1828,7 @@ per 100.000 inh.]]></Text>
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1637858347517</Id>
 					<Name><![CDATA[slider1]]></Name>
-					<X>780</X><Y>120</Y>
+					<X>780</X><Y>100</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1678,7 +1851,7 @@ per 100.000 inh.]]></Text>
 				<Text>
 					<Id>1637858373269</Id>
 					<Name><![CDATA[boosterRateText]]></Name>
-					<X>790</X><Y>100</Y>
+					<X>790</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2561,6 +2734,321 @@ prevention measure and mask selection.
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668876786668</Id>
+					<Name><![CDATA[MNS_risk_reduction]]></Name>
+					<X>740</X><Y>170</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.38]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1.0]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>mnsRiskReduction</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668876797802</Id>
+					<Name><![CDATA[FFP2_risk_reduction]]></Name>
+					<X>740</X><Y>220</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.35]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1.0]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>ffp2RiskReduction</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668876848930</Id>
+					<Name><![CDATA[PCR_true_positiv]]></Name>
+					<X>490</X><Y>310</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.1]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1.0]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>pcrTruePos</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668877288301</Id>
+					<Name><![CDATA[PCR_false_positive]]></Name>
+					<X>490</X><Y>360</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.12]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>pcrFalsePos</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668878089295</Id>
+					<Name><![CDATA[AG_true_positiv]]></Name>
+					<X>630</X><Y>310</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.35]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1.0]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>agTruePos</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668878089308</Id>
+					<Name><![CDATA[AG_false_positiv]]></Name>
+					<X>630</X><Y>360</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.30]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1.0]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>agFalsePos</Link>
+					</ExtendedProperties>
+				</Control>
+				<Control Type="Slider">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1668878241142</Id>
+					<Name><![CDATA[PCR_proportion]]></Name>
+					<X>570</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="100" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<Enabled>true</Enabled>
+					</BasicProperties>
+					<ExtendedProperties>
+						<DefaultValueCode><![CDATA[0.26]]></DefaultValueCode>
+						<Orientation>HORIZONTAL</Orientation>
+						<MinValue><![CDATA[0]]></MinValue>
+						<MaxValue><![CDATA[1.0]]></MaxValue>
+						<Step><![CDATA[0.01]]></Step>
+						<LinkTo>true</LinkTo>
+						<Link>pcrTestProportion</Link>
+					</ExtendedProperties>
+				</Control>
+				<Text>
+					<Id>1668881905102</Id>
+					<Name><![CDATA[boosterRateText1]]></Name>
+					<X>730</X><Y>150</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[MNS risk reduction]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1668881995769</Id>
+					<Name><![CDATA[ffp2Riskreduction]]></Name>
+					<X>730</X><Y>210</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[FFP2 risk reduction]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1668883301156</Id>
+					<Name><![CDATA[pcrProportion]]></Name>
+					<X>570</X><Y>240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[PCR proportion]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1668883348460</Id>
+					<Name><![CDATA[pcrTruePositive]]></Name>
+					<X>490</X><Y>290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[PCR true positive]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1668883385724</Id>
+					<Name><![CDATA[pcrFalsePositive]]></Name>
+					<X>490</X><Y>340</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[PCR false positive]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1668883411876</Id>
+					<Name><![CDATA[agFalsePositive]]></Name>
+					<X>630</X><Y>340</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Antigen false positive]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1668883421157</Id>
+					<Name><![CDATA[agTruePositive]]></Name>
+					<X>630</X><Y>290</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Antigen true positive]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>14</Size>
 						<Style>0</Style>
 					</Font>
 					<Alignment>LEFT</Alignment>
@@ -3534,6 +4022,27 @@ starts (applyPreventionMeasures)]]></Text>
 				<Parameter>
 					<ParameterName><![CDATA[basicReductionFactorBooster]]></ParameterName>
 				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[pcrTruePos]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[pcrFalsePos]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[agTruePos]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[agFalsePos]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[pcrTestProportion]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[mnsRiskReduction]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[ffp2RiskReduction]]></ParameterName>
+				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
@@ -3676,6 +4185,27 @@ root.outputFile.writeFile();
 			<FreeformParamValue>	
 				<Id>1667577626277</Id>
 			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880171184</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880314352</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880320616</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880328398</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880338913</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880364851</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1668880631786</Id>
+			</FreeformParamValue>
 			<RangeVariationParamValue>	
 				<Id>1637663612874</Id>
 				<Type>FIXED</Type>
@@ -3754,6 +4284,34 @@ root.outputFile.writeFile();
 			</RangeVariationParamValue>
 			<RangeVariationParamValue>	
 				<Id>1667577626277</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880171184</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880314352</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880320616</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880328398</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880338913</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880364851</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1668880631786</Id>
 				<Type>FIXED</Type>
 			</RangeVariationParamValue>
 			<ModelTimeProperties>
