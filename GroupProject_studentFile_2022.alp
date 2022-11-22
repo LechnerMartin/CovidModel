@@ -628,7 +628,7 @@ outputFile.setFileName(this.fileName);
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1668880171184</Id>
-					<Name><![CDATA[pcrTruePos]]></Name>
+					<Name><![CDATA[pcrFalseNeg]]></Name>
 					<X>-260</X><Y>690</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -639,11 +639,12 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.9]]></Code>
+							<Code><![CDATA[0.12
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1668880171182</Id>
-							<Label><![CDATA[pcrTruePos]]></Label>
+							<Label><![CDATA[pcrFalseNeg]]></Label>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -664,7 +665,8 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.1]]></Code>
+							<Code><![CDATA[0.003
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1668880314350</Id>
@@ -678,7 +680,7 @@ outputFile.setFileName(this.fileName);
 				</Variable>
 				<Variable Class="Parameter">
 					<Id>1668880320616</Id>
-					<Name><![CDATA[agTruePos]]></Name>
+					<Name><![CDATA[agFalseNeg]]></Name>
 					<X>-260</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -689,11 +691,12 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.6]]></Code>
+							<Code><![CDATA[0.347
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1668880320614</Id>
-							<Label><![CDATA[agTruePos]]></Label>
+							<Label><![CDATA[agFalseNeg]]></Label>
 							<EditorContolType>TEXT_BOX</EditorContolType>
 							<MinSliderValue><![CDATA[0]]></MinSliderValue>
 							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
@@ -714,7 +717,8 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.3]]></Code>
+							<Code><![CDATA[0.01505
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1668880328396</Id>
@@ -1084,22 +1088,22 @@ List<String> noninfectiousStates = new ArrayList<>(Arrays.asList(
 // have disease + test pos: sensitivity = TruePos/(TruePos + FN)
 // no disease + neg test: specifity = Tn/(Fp +Tn)
 
-double pcrTruePos = this.pcrTruePos; 
+double pcrTruePos = 1-this.pcrFalseNeg; 
 double pcrFalsePos = this.pcrFalsePos; 
-double agTruePos = this.agTruePos; 
+double agTruePos = 1-this.agFalseNeg; 
 double agFalsePos = this.agFalsePos; 
 
 double rndPcr = Math.random();
 double rndTest = Math.random();
 boolean isTestPositiv = false;
 
-if (rndPcr < pcrTestRate) { // PCR test
-	if(noninfectiousStates.contains(stateOfPerson) && rndTest < pcrFalsePos) isTestPositiv = true;
-	if(infectiousStates.contains(stateOfPerson) && rndTest < pcrTruePos) isTestPositiv = true;
+if (rndPcr <= pcrTestRate) { // PCR test
+	if(noninfectiousStates.contains(stateOfPerson) && rndTest <= pcrFalsePos) isTestPositiv = true;
+	if(infectiousStates.contains(stateOfPerson) && rndTest <= pcrTruePos) isTestPositiv = true;
 }
 else { // Antigen test
-	if(noninfectiousStates.contains(stateOfPerson) && rndTest < agFalsePos) isTestPositiv = true;
-	if(infectiousStates.contains(stateOfPerson) && rndTest < agTruePos) isTestPositiv = true;						
+	if(noninfectiousStates.contains(stateOfPerson) && rndTest <= agFalsePos) isTestPositiv = true;
+	if(infectiousStates.contains(stateOfPerson) && rndTest <= agTruePos) isTestPositiv = true;						
 }
 	
 return !isTestPositiv;
@@ -2789,7 +2793,7 @@ prevention measure and mask selection.
 				<Control Type="Slider">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1668876848930</Id>
-					<Name><![CDATA[PCR_true_positiv]]></Name>
+					<Name><![CDATA[PCR_false_negativ]]></Name>
 					<X>490</X><Y>310</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -2805,9 +2809,10 @@ prevention measure and mask selection.
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
 						<MaxValue><![CDATA[1.0]]></MaxValue>
-						<Step><![CDATA[0.01]]></Step>
+						<Step><![CDATA[0.001
+]]></Step>
 						<LinkTo>true</LinkTo>
-						<Link>pcrTruePos</Link>
+						<Link>pcrFalseNeg</Link>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="Slider">
@@ -2829,7 +2834,7 @@ prevention measure and mask selection.
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
 						<MaxValue><![CDATA[1]]></MaxValue>
-						<Step><![CDATA[0.01]]></Step>
+						<Step><![CDATA[0.001]]></Step>
 						<LinkTo>true</LinkTo>
 						<Link>pcrFalsePos</Link>
 					</ExtendedProperties>
@@ -2837,7 +2842,7 @@ prevention measure and mask selection.
 				<Control Type="Slider">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1668878089295</Id>
-					<Name><![CDATA[AG_true_positiv]]></Name>
+					<Name><![CDATA[AG_false_negativ]]></Name>
 					<X>630</X><Y>310</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -2853,9 +2858,9 @@ prevention measure and mask selection.
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
 						<MaxValue><![CDATA[1.0]]></MaxValue>
-						<Step><![CDATA[0.01]]></Step>
+						<Step><![CDATA[0.001]]></Step>
 						<LinkTo>true</LinkTo>
-						<Link>agTruePos</Link>
+						<Link>agFalseNeg</Link>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="Slider">
@@ -2877,7 +2882,7 @@ prevention measure and mask selection.
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
 						<MaxValue><![CDATA[1.0]]></MaxValue>
-						<Step><![CDATA[0.01]]></Step>
+						<Step><![CDATA[0.001]]></Step>
 						<LinkTo>true</LinkTo>
 						<Link>agFalsePos</Link>
 					</ExtendedProperties>
@@ -2982,7 +2987,7 @@ prevention measure and mask selection.
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[PCR true positive]]></Text>
+					<Text><![CDATA[PCR false negative]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>14</Size>
@@ -3045,7 +3050,7 @@ prevention measure and mask selection.
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Antigen true positive]]></Text>
+					<Text><![CDATA[Antigen false negative]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>14</Size>
@@ -4023,13 +4028,13 @@ starts (applyPreventionMeasures)]]></Text>
 					<ParameterName><![CDATA[basicReductionFactorBooster]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[pcrTruePos]]></ParameterName>
+					<ParameterName><![CDATA[pcrFalseNeg]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[pcrFalsePos]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[agTruePos]]></ParameterName>
+					<ParameterName><![CDATA[agFalseNeg]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[agFalsePos]]></ParameterName>
