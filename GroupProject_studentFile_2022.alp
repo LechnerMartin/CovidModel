@@ -82,7 +82,8 @@ outputFile.setFileName(this.fileName);
 					<NetworkType>DISTANCE_BASED</NetworkType>
 					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
-					<ConnectionsRangeCode><![CDATA[2*this.scaleRatio//2 metres]]></ConnectionsRangeCode>
+					<ConnectionsRangeCode><![CDATA[2*this.scaleRatio//2 metres
+]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
 					<MCode><![CDATA[10]]></MCode>
 			</EnvironmentProperties>
@@ -768,7 +769,8 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.39]]></Code>
+							<Code><![CDATA[0.22
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1668880364849</Id>
@@ -793,7 +795,8 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.68]]></Code>
+							<Code><![CDATA[0.43
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1668880631784</Id>
@@ -818,7 +821,8 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.39]]></Code>
+							<Code><![CDATA[0.22
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1669299410875</Id>
@@ -843,7 +847,8 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.68]]></Code>
+							<Code><![CDATA[0.43
+]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1669299410884</Id>
@@ -3111,7 +3116,7 @@ prevention measure and mask selection.
 				<Control Type="Slider">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1669299233272</Id>
-					<Name><![CDATA[MNS_risk_reduction1]]></Name>
+					<Name><![CDATA[MNS_risk_reductionSpread]]></Name>
 					<X>660</X><Y>310</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -3135,7 +3140,7 @@ prevention measure and mask selection.
 				<Control Type="Slider">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
 					<Id>1669299233278</Id>
-					<Name><![CDATA[FFP2_risk_reduction1]]></Name>
+					<Name><![CDATA[FFP2_risk_reductionSpread]]></Name>
 					<X>660</X><Y>360</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
