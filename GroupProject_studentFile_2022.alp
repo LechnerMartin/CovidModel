@@ -769,7 +769,7 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.22
+							<Code><![CDATA[0.785
 ]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
@@ -795,7 +795,7 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.43
+							<Code><![CDATA[0.985
 ]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
@@ -821,7 +821,7 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.22
+							<Code><![CDATA[0.7
 ]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
@@ -847,7 +847,7 @@ outputFile.setFileName(this.fileName);
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.43
+							<Code><![CDATA[0.85
 ]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
